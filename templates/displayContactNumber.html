@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Numbers</title>
+</head>
+<body>
+    <h1>Contact Numbers</h1>
+    <table border="1">
+        <thead>
+            <tr>
+
+                <th>Name</th>
+                <th>Phone number</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for cont in contacts %}
+            <tr>
+
+                <td>{{ cont.name }}</td>
+                <td>{{ cont.phone_number }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <hr>
+    <h1>Add New Contact</h1>
+    <form action="/addRecord" method="post">
+        <lable for="name">Name</lable>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <lable for="phone_number">Phone Number</lable>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <br>
+        <input type="submit" value="Add Contact">
+
+    </form>
+
+    <hr>
+    <h1>Update Contact</h1>
+    <form action="/updateRecord" method="post">
+        <lable for="name">Name</lable>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <lable for="phone_number">Phone Number</lable>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <br>
+        <input type="submit" value="Update Contact">
+
+    </form>
+    <hr>
+    <h1>Delete Contact</h1>
+    <form action="/deleteRecord" method="post">
+        <lable for="name">Name</lable>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <lable for="phone_number">Phone Number</lable>
+        <input type="text" id="phone_number" name="phone_number" required>
+        <br>
+        <input type="submit" value="Delete Contact">
+
+    </form>
+</body>
+</html>
